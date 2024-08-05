@@ -51,7 +51,7 @@ app.get('/api/sheet-data', async (req, res) => {
 app.use(express.static(path.join(__dirname, '../google-sheets-frontend/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../google-sheets-frontend/dist', 'index.html'));
+  res.sendFile('index.html',{root : path.join(__dirname, '../google-sheets-frontend/dist')});
 });
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
