@@ -4,18 +4,24 @@
     {
       "src": "api/index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "google-sheets-frontend/dist/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/api/index.js"
-    }
-  ],
-  "rewrites":[
+    },
     {
-      "source": "(.*)",
-      "destination": "/google-sheets-frontend/dist/index.html"
+      "src": "/(.*)",
+      "dest": "/google-sheets-frontend/dist/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/google-sheets-frontend/dist/index.html"
     }
   ]
 }
