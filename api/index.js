@@ -6,6 +6,10 @@ const dotenv = 'dotenv'
 require('dotenv').config();
 
 const app = express();
+<<<<<<< HEAD:api/index.js
+=======
+const PORT = process.env.PORT || 3000;
+>>>>>>> 7b56e7404062901f0b99195734b4a551f6f1d896:server.js
 
 const spreadsheetId = process.env.SPREADSHEET_ID;
 
