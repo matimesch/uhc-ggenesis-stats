@@ -6,22 +6,18 @@
       "use": "@vercel/node"
     },
     {
-      "src": "google-sheets-frontend/dist/**",
+      "src": "google-sheets-frontend/dist/**/*",
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/google-sheets-frontend/dist/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/google-sheets-frontend/dist/index.html"
+      "source": "/(.*)",
+      "destination": "/google-sheets-frontend/dist/$1"
     }
   ]
 }
