@@ -5,7 +5,7 @@
     ],
     "routes": [
       { "src": "/api/(.*)", "dest": "/api/index.js" },
-      { "src": "/(.*)", "dest": "/google-sheets-frontend/$1" }
+      { "src": "/(.*)", "dest": "/google-sheets-frontend/dist/index.html" }
     ]
   }
   
