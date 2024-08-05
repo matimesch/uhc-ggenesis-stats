@@ -3,14 +3,21 @@
   "builds": [
     {
       "src": "api/index.js",
-      "use": "@now/node"
+      "use": "@vercel/node"
+    },
+    {
+      "src": "google-sheets-frontend/dist/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      
       "src": "/api/(.*)",
       "dest": "/api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/google-sheets-frontend/dist/$1"
     }
   ]
 }
