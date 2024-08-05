@@ -6,7 +6,6 @@ const dotenv = 'dotenv'
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 const spreadsheetId = process.env.SPREADSHEET_ID;
 
@@ -48,12 +47,12 @@ app.get('/api/sheet-data', async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, '/google-sheets-frontend/dist')));
+app.use(express.static(path.join(__dirname, '../google-sheets-frontend/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './google-sheets-frontend/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../google-sheets-frontend/dist', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
+module.exports = app;
