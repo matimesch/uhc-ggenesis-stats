@@ -13,7 +13,7 @@ export default function Navbar (){
     useEffect(() => {
         const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/sheet-data');
+            const response = await axios.get('http://localhost:3000/api/sheet-data');
             setData(response.data);
             setLoading(false);
             console.log(response)
