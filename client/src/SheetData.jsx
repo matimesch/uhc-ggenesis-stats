@@ -15,7 +15,7 @@ const getImageUrl = (playerName) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/api/sheet-data');
+          const response = await axios.get('https://uhc-ggenesis-stats.vercel.app/api/sheet-data');
           
           const transformedData = response.data.map(item => {
             const matches = parseInt(item[1], 10);
